@@ -1,0 +1,10 @@
+.box{
+     border-radius: 10px;
+}
+
+.box:nth-child(odd){
+     background-color: #032050;
+}
+.box:nth-child(odd){
+     background-color: #032050;
+}
