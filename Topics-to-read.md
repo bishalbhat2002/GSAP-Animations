@@ -2,24 +2,24 @@
 🚀 GSAP LEARNING ROADMAP
 ========================
 
-[ ] 1. GSAP Basics
-    [ ] What is GSAP?
-    [ ] CDN setup & installation
-    [ ] gsap.to()
-    [ ] gsap.from()
-    [ ] gsap.fromTo()
-    [ ] duration, delay
-    [ ] ease (power1, bounce, elastic)
+[✅] 1. GSAP Basics
+    [✅] What is GSAP?
+    [✅] CDN setup & installation
+    [✅] gsap.to()
+    [✅] gsap.from()
+    [✅] gsap.fromTo()
+    [✅] duration, delay
+    [✅] ease (power1, bounce, elastic)
 
 ------------------------
 
-[ ] 2. Transforms & Properties
-    [ ] x, y, xPercent, yPercent
-    [ ] scale, rotation
-    [ ] opacity
-    [ ] backgroundColor
-    [ ] skew
-    [ ] transformOrigin
+[✅] 2. Transforms & Properties
+    [✅] x, y, xPercent, yPercent
+    [✅] scale, rotation
+    [✅] opacity
+    [✅] backgroundColor
+    [✅] skew
+    [✅] transformOrigin
 
 ------------------------
 

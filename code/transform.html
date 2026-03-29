@@ -7,12 +7,13 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-red-400">
 
      <!-- Navbar code -->
+     <!-- class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-full overflow-y-auto hide-navbar" -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-full overflow-y-auto"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,7 +22,7 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
@@ -35,23 +36,280 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Transform</h1>
+     <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-auto">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-0">Transform Properties</h1>
+
+          <!-- x, opacity, scale Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="first-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10">
+                         This animation demonstrates the use of transform properties like x, opacity, and scale. The animation moves the box 300 pixels to the right, reduces its opacity to 0.5, and scales it up to 3 times its original size. The animation lasts for 1 second, uses a smooth easing function, and repeats indefinitely with a yoyo effect, creating a continuous back-and-forth motion.
+                    </p>
+          </div>
+          
+          <!-- rotate, transformOrigin Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="second-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10">
+                         This animation demonstrates the use of transform properties like rotate and transformOrigin. The animation rotates the box by +60 degrees and changes its transform origin to the center. The animation lasts for 1 second, uses a smooth easing function, and repeats indefinitely with a yoyo effect, creating a continuous back-and-forth motion. (+ means +ve value)
+                    </p>
+          </div>
+          
+          <!-- skewX Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="third-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10">
+                         This animation demonstrates the use of transform properties like skewX. The animation skews the box by +20 degrees along the X-axis. The animation lasts for 1 second, uses a smooth easing function, and repeats indefinitely with a yoyo effect, creating a continuous back-and-forth motion. (+ means +ve value)
+                    </p>
+          </div>
+          
+          <!-- skewY Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="fourth-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10">
+                         This animation demonstrates the use of transform properties like skewY. The animation skews the box by +20 degrees along the Y-axis. The animation lasts for 1 second, uses a smooth easing function, and repeats indefinitely with a yoyo effect, creating a continuous back-and-forth motion. (+ means +ve value)
+                    </p>
+          </div>          
+          
+          <!-- Paused / Play Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="fifth-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10" id="paused-animation-paragraph" >
+                         <button
+                              onclick=startAnimation()
+                              class="bg-zinc-700 text-white/80 px-2 py-1 rounded-sm"
+                         >Start Animation</button> 
+                         This animation demonstrates the 'paused' property of GSAP. Click to start the animation.
+                    </p>
+          </div>          
+          
+          <!-- xPercent / yPercent Animation Code.... -->
+          <div class="bg-green-500 p-2 pt-10 rounded-sm">
+               <div class="size-10 bg-red-200 rounded-sm" id="sixth-box"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-10" id="paused-animation-paragraph" >
+                         This animation demonstrates the xPercent and yPercent properties of GSAP. The animation moves the box to the right by 400% of its own width and up by 90% of its own height. The animation lasts for 1 second, uses a smooth easing function, and repeats indefinitely with a yoyo effect, creating a continuous back-and-forth motion.
+                    </p>
+          </div>
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+     // gsap.registerPlugin(ScrollTrigger);
+
+     gsap.to("#first-box", {
+          x: 300,
+          opacity: 0.5,
+          scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+     });
+
+     gsap.to("#second-box", {
+          x: 300,
+          opacity: 0.5,
+          scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+          rotate:60,
+          transformOrigin: "center",
+     });
+     
+     gsap.to("#third-box", {
+          x: 300,
+          opacity: 0.5,
+          scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center",
+          skewX: 20,
+     });
+
+     gsap.to("#fourth-box", {
+          x: 300,
+          opacity: 0.5,
+          scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center",
+          skewY: 20,
+          backgroundColor: "blue",
+     });     
+     
+     const animation = gsap.to("#fifth-box", {
+          x: 300,
+          opacity: 0.5,
+          scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center",
+          paused: true,
+     });
+
+     function startAnimation() {
+          animation.play();
+          document.getElementById("paused-animation-paragraph").innerHTML = `<button
+                         onclick=stopAnimation()
+                         class="bg-zinc-700 text-white/80 px-2 py-1 rounded-sm"
+                         >Stop Animation</button> This animation demonstrates the 'paused' property of GSAP. Click stop button to stop the animation to stop the animation.`;
+     }     
+     
+     function stopAnimation() {
+          animation.pause();
+          document.getElementById("paused-animation-paragraph").innerHTML = `<button
+                         onclick=startAnimation()
+                         class="bg-zinc-700 text-white/80 px-2 py-1 rounded-sm"
+                         >Resume Animation</button> This animation demonstrates the 'paused' property of GSAP. Click start button to start the animation to start the animation.`;
+     }
+
+     gsap.to("#sixth-box", {
+          xPercent: 400,
+          yPercent: -90,
+          // opacity: 0.5,
+          // scale: 3,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+          transformOrigin: "center",
+     });
+
+</script>
 </html>
+
+
+
+<!-- Explanation -->
+
+
+<!-- Transform Properties -->
+
+<!-- 
+     1. x, y: Move the element along the x and y axis.
+          x: 100 moves the element 100 pixels to the right. ➡️         
+          y: 100 moves the element 100 pixels down. ⬇️
+
+          x: -100 moves the element 100 pixels to the left. ⬅️
+          y: -100 moves the element 100 pixels up. ⬆️
+
+     2. opacity: Change the transparency of the element.
+          opacity: 0 makes the element fully transparent (invisible).
+          opacity: 1 makes the element fully opaque (visible).
+          Values between 0 and 1 create a fade effect.
+
+     3. scale: Scale the size of the element.
+          scale: 1 is the original size.
+          scale: 1.5 makes the element 50% larger.
+          scale: 0.5 makes the element 50% smaller.
+
+     4. rotation: Rotate the element in degrees.
+          rotation: 45 rotates the element 45 degrees clockwise.
+          rotation: -45 rotates the element 45 degrees counterclockwise.
+
+     5. duration: Set the duration of the animation in seconds.
+          duration: 1 means the animation will take 1 second to complete.
+
+     6. ease: Define the easing function for smooth animation.
+          ease: "power1.inOut" creates a smooth start and end to the animation.
+          GSAP offers many easing options like "linear", "bounce", "elastic", etc.
+
+     7. delay: Set a delay before the animation starts.
+          delay: 0.5 means the animation will start after a 0.5 second delay.
+
+     8. repeat: Set the number of times the animation should repeat.
+          repeat: 2 means the animation will repeat 2 times after the initial play.
+          repeat: -1 means the animation will repeat indefinitely.
+
+     9. yoyo: If true, the animation will reverse back to the start after it completes.
+          yoyo: true creates a back-and-forth animation effect.
+     
+     10. stagger: Animate multiple elements with a delay between each start.
+          stagger: 0.2 means each element will start animating 0.2 seconds after the previous one.
+
+     11. repeatDelay: Set a delay between repeats of the animation.
+          repeatDelay: 1 means there will be a 1 second delay between each repeat of the animation.
+     
+     12. paused: If true, the animation will start in a paused state and won't play until you call .play() on it.
+          paused: true allows you to control when the animation starts.
+
+          const anim = gsap.to(".box", {
+               x: 200,
+               paused: true
+          });
+
+          later
+          anim.play();
+     
+     13. scaleX and scaleY: Scale the width and height of the element independently.
+          scaleX: 1.5 scales the width by 150%.
+          scaleY: 0.5 scales the height by 50%.
+
+
+     14. skewX and skewY: Skew the element along the x and y axis.
+          skewX: 20 skews the element 20 degrees along the x-axis.
+
+     15. backgroundColor, color: Animate the background color or text color of an element.
+          backgroundColor: "red" changes the background color to red.
+          color: "blue" changes the text color to blue.
+     
+     16. transformOrigin: Set the origin point for transformations like scale and rotation.
+          transformOrigin: "center" sets the origin to the center of the element.
+          transformOrigin: "top left" sets the origin to the top left corner of the element.
+
+     17. xPercent and yPercent: Move the element by a percentage of its own width or height.
+          xPercent: 100 moves the element to the right by 100% of its own width.
+          yPercent: 100 moves the element down by 100% of its own height.
+
+     18. scrub (with ScrollTrigger): Links animation with the scroll position for scroll-based animations.
+          scrub: true means the animation will progress in sync with the scroll position.
+
+     19. markers (with ScrollTrigger): Show visual markers for the start and end of scroll-triggered animations.
+          markers: true will display markers on the page to indicate where the scroll trigger starts and ends
+     
+
+     20. onComplete: A callback function that runs when the animation completes.
+          onComplete: () => { console.log("Animation complete!"); } will log a message when the animation finishes.
+     
+     21. onStart: A callback function that runs when the animation starts.
+          onStart: () => { console.log("Animation started!"); } will log a message when the animation begins.
+
+     22. onUpdate: A callback function that runs every time the animation updates (on each frame).
+          onUpdate: () => { console.log("Animation updated!"); } will log a message every time the animation updates.
+
+     23. onRepeat: A callback function that runs every time the animation repeats.
+          onRepeat: () => { console.log("Animation repeated!"); } will log a message every time the animation repeats.
+     
+     24. onReverseComplete: A callback function that runs when a reversed animation completes.
+          onReverseComplete: () => { console.log("Reverse animation complete!"); } will log a message when the reverse animation finishes.
+          
+     25. onInterrupt: A callback function that runs when the animation is interrupted (e.g., by another animation).
+          onInterrupt: () => { console.log("Animation interrupted!"); } will log a message if the animation is interrupted.
+
+-->
