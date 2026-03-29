@@ -4,56 +4,356 @@
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>GSAP + Tailwind css</title>
-      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
      <link rel="stylesheet" href="style.css">
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
 
-     <h1 class="text-4xl font-bold text-center mb-3 py-2 bg-green-200">GSAP + Tailwind CSS</h1>
-     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
-          <div class="box bg-blue-500 w-90 h-90 mx-auto" class="box"></div>
+     <!-- Navbar code -->
+     <nav 
+          id="navbar"
+          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+     >
+     <div 
+     class="flex gap-2 justify-between items-center sticky top-0">
+          <span class="text-2xl font-bold bg-white p-2 px-4 text-center rounded-sm md:w-full">
+               GSAP code practice
+          </span>
+          <button 
+          id="hide-navbar-btn"
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          >❌</button>
      </div>
 
+     <!-- Nav list -->
+     <ul class="mt-4 flex flex-col gap-2" id="navlinks">
+          <!-- <li class="p-2 hover:bg-gray-200 rounded"><a class="block" href="/">Home</a></li> -->
+     </ul>
+
+     </nav>
+     
+     <!-- Navbar show button -->
+     <button 
+          id="show-navbar-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+     >☰</button>
+
+
+     <!-- Main section for code.... -->
+     <main class="bg-green-100 min-h-screen p-4 flex flex-col gap-4">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">GSAP Basics</h1>
+
+          <!-- gsap.to() Animation Code.... -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-30 bg-red-200 rounded-full" id="first-circle"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-2">
+                         This is a simple animation created using GSAP. The red circle will move horizontally, fade, and scale up and down in a smooth loop. You can customize the animation by changing the properties in the gsap.to() method in the JavaScript code. Try experimenting with different values for x, opacity, scale, duration, ease, delay, repeat, and yoyo to see how it affects the animation!
+                    </p>
+          </div>
+
+          <!-- gsap.from() Animation Code.... -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-30 bg-red-200 rounded-full" id="second-circle"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-2">
+                         This animation uses the gsap.from() method, which animates the red circle from a specified state to its current state. The circle will start from being 300 pixels to the right, fully transparent, and scaled down to 0, and then it will animate to its original position, full opacity, and normal size. Like the previous animation, it will also loop indefinitely with a smooth back-and-forth motion. Feel free to modify the properties in the gsap.from() method to create your own unique animation!
+                    </p>
+          </div>
+          
+          <!-- gsap.fromTo() Animation Code.... -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-30 bg-red-200 rounded-full" id="third-circle"></div>
+                    <p class="bg-gray-200 rounded text-sm overflow-x-auto p-2 mt-2">
+                         This animation uses the gsap.fromTo() method, which animates the red circle from one state to another. The circle will start from being 300 pixels to the right, fully transparent, and scaled down to 0, and then it will animate to its original position, full opacity, and normal size. Like the previous animation, it will also loop indefinitely with a smooth back-and-forth motion. Feel free to modify the properties in the gsap.fromTo() method to create your own unique animation!
+                    </p>
+          </div>
+
+     </main>   
+
 </body>
+<script src="code/navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+     gsap.registerPlugin(ScrollTrigger);
+
+     gsap.to("#first-circle", {
+          x: 300,
+          opacity: 0.5,
+          scale: 1.1,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+     });
+     
+     gsap.from("#second-circle", {
+          x: 300,
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+     });
+     
+     gsap.fromTo("#third-circle", {
+          x: 200,
+          opacity: 0,
+          scale: 0,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+     }, {
+          x: 300,
+          opacity: 1,
+          scale: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          delay: 0.5,
+          repeat: -1,
+          yoyo: true,
+     });
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
 </html>
+
+
+
+<!-- Explanation -->
+
+
+<!-- GSAP BASIC INTRODUCTION -->
+<!-- 
+     Q.What is GSAP?
+     GSAP (GreenSock Animation Platform) is a powerful JS library used to create smooth, high performance animations on the web.
+     Instead of wruting complex CSS animations, GSAP lets us animate elements easily with JS.
+
+     Why GSAP is popular?
+     1. Very smooth animations (better than CSS in many cases)
+     2. Precise control over start, end, duration, delay, easing, etc.
+     3. Higher performance
+     4. Works with ScrollTrigger, timelines, and more.
+     5. Works in all modern browsers
+
+     Q. CDN Setup For GSAP?
+     CDN stands for Content Devlivery Network. It allows us to include external libraries like GSAP without downloading them. we can simply add a script tag with the CDN link in our HTML file.
+
+     FOR Basic GSAP animations, we need to include the main GSAP library. If we want to use scroll-based animations, we also need to include the ScrollTrigger plugin.
+
+     This is the main GSAP library CDN linking JS code.
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>     
+
+     This is the ScrollTrigger plugin CDN linking JS code.
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>     
+
+     Note: Once, we include the GSAP ScrollTrigger Plugin, we must register it with GSAP before using it. WE can do this with the following code:
+          gsap.registerPlugin(ScrollTrigger);
+
+-->
+
+
+
+<!-- gsap.to() -->
+<!-- 
+     gsap.to() method is used to animate an element from its current state to a new state. It takes 2 arguments:  
+     1. The element to animate.
+     2. An object that defines the properties to animate. The animation here moves towards these properties.
+
+     Example:
+     gsap.to(".box",{
+          property:value,
+          duration:time,
+          ease:"easeType",
+          delay:time,
+     })
+
+
+     gsap.to(".box", {
+          x: 200,        // move right
+          y: 100,        // move down
+          opacity: 0.5,  // fade
+          scale: 1.5     // grow
+          duration: 1    // animation duration is 1 second
+          ease: "power1.inOut", // easing function for smooth animation
+          delay: 0.5     // delay before animation starts
+     });
+
+-->
+
+
+<!-- gsap.from() -->
+<!-- 
+     gsap.from() method is used to animate an element to a current state from a specified state. It takes 2 arguments:  
+     1. The element to animate.
+     2. An object that defines the properties from which the animation starts. The animation here moves from these properties to the current state.
+
+     Example:
+     gsap.from(".box",{
+          property:value,
+          duration:time,
+          ease:"easeType",
+          delay:time,
+     })
+
+
+     gsap.from(".box", {
+          x: 200,        // move right
+          y: 100,        // move down
+          opacity: 0.5,  // fade
+          scale: 1.5     // grow
+          duration: 1    // animation duration is 1 second
+          ease: "power1.inOut", // easing function for smooth animation
+          delay: 0.5     // delay before animation starts
+     });
+
+-->
+
+
+<!-- gsap.fromTo() -->
+<!-- 
+     gsap.fromTo() method is used to animate an element from one state to another. It takes 3 arguments:  
+     1. The element to animate.
+     2. An object that defines the properties from which the animation starts.
+     3. An object that defines the properties to which the animation ends.
+
+     Example:
+     gsap.fromTo(".box", {
+          x: 0,
+          y: 0,
+          opacity: 1,
+          scale: 1
+     }, {
+          x: 200,
+          y: 100,
+          opacity: 0.5,
+          scale: 1.5
+     });
+
+     In this example, the animation starts from the properties defined in the first object and ends at the properties defined in the second object.
+
+-->
+
+
+<!-- Some properties -->
+<!-- 
+     1. x, y: Move the element along the x and y axis.
+          x: 100 moves the element 100 pixels to the right. ➡️         
+          y: 100 moves the element 100 pixels down. ⬇️
+
+          x: -100 moves the element 100 pixels to the left. ⬅️
+          y: -100 moves the element 100 pixels up. ⬆️
+
+     2. opacity: Change the transparency of the element.
+          opacity: 0 makes the element fully transparent (invisible).
+          opacity: 1 makes the element fully opaque (visible).
+          Values between 0 and 1 create a fade effect.
+
+     3. scale: Scale the size of the element.
+          scale: 1 is the original size.
+          scale: 1.5 makes the element 50% larger.
+          scale: 0.5 makes the element 50% smaller.
+
+     4. rotation: Rotate the element in degrees.
+          rotation: 45 rotates the element 45 degrees clockwise.
+          rotation: -45 rotates the element 45 degrees counterclockwise.
+
+     5. duration: Set the duration of the animation in seconds.
+          duration: 1 means the animation will take 1 second to complete.
+
+     6. ease: Define the easing function for smooth animation.
+          ease: "power1.inOut" creates a smooth start and end to the animation.
+          GSAP offers many easing options like "linear", "bounce", "elastic", etc.
+
+     7. delay: Set a delay before the animation starts.
+          delay: 0.5 means the animation will start after a 0.5 second delay.
+
+     8. repeat: Set the number of times the animation should repeat.
+          repeat: 2 means the animation will repeat 2 times after the initial play.
+          repeat: -1 means the animation will repeat indefinitely.
+
+     9. yoyo: If true, the animation will reverse back to the start after it completes.
+          yoyo: true creates a back-and-forth animation effect.
+     
+     10. stagger: Animate multiple elements with a delay between each start.
+          stagger: 0.2 means each element will start animating 0.2 seconds after the previous one.
+
+     11. repeatDelay: Set a delay between repeats of the animation.
+          repeatDelay: 1 means there will be a 1 second delay between each repeat of the animation.
+     
+     12. paused: If true, the animation will start in a paused state and won't play until you call .play() on it.
+          paused: true allows you to control when the animation starts.
+
+          const anim = gsap.to(".box", {
+               x: 200,
+               paused: true
+          });
+
+          later
+          anim.play();
+     
+     13. scaleX and scaleY: Scale the width and height of the element independently.
+          scaleX: 1.5 scales the width by 150%.
+          scaleY: 0.5 scales the height by 50%.
+
+
+     14. skewX and skewY: Skew the element along the x and y axis.
+          skewX: 20 skews the element 20 degrees along the x-axis.
+
+     15. backgroundColor, color: Animate the background color or text color of an element.
+          backgroundColor: "red" changes the background color to red.
+          color: "blue" changes the text color to blue.
+     
+     16. transformOrigin: Set the origin point for transformations like scale and rotation.
+          transformOrigin: "center" sets the origin to the center of the element.
+          transformOrigin: "top left" sets the origin to the top left corner of the element.
+
+     17. xPercent and yPercent: Move the element by a percentage of its own width or height.
+          xPercent: 100 moves the element to the right by 100% of its own width.
+          yPercent: 100 moves the element down by 100% of its own height.
+
+     18. scrub (with ScrollTrigger): Links animation with the scroll position for scroll-based animations.
+          scrub: true means the animation will progress in sync with the scroll position.
+
+     19. markers (with ScrollTrigger): Show visual markers for the start and end of scroll-triggered animations.
+          markers: true will display markers on the page to indicate where the scroll trigger starts and ends
+     
+
+     20. onComplete: A callback function that runs when the animation completes.
+          onComplete: () => { console.log("Animation complete!"); } will log a message when the animation finishes.
+     
+     21. onStart: A callback function that runs when the animation starts.
+          onStart: () => { console.log("Animation started!"); } will log a message when the animation begins.
+
+     22. onUpdate: A callback function that runs every time the animation updates (on each frame).
+          onUpdate: () => { console.log("Animation updated!"); } will log a message every time the animation updates.
+
+     23. onRepeat: A callback function that runs every time the animation repeats.
+          onRepeat: () => { console.log("Animation repeated!"); } will log a message every time the animation repeats.
+     
+     24. onReverseComplete: A callback function that runs when a reversed animation completes.
+          onReverseComplete: () => { console.log("Reverse animation complete!"); } will log a message when the reverse animation finishes.
+          
+     25. onInterrupt: A callback function that runs when the animation is interrupted (e.g., by another animation).
+          onInterrupt: () => { console.log("Animation interrupted!"); } will log a message if the animation is interrupted.
+
+-->

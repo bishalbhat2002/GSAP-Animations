@@ -1,10 +1,23 @@
-.box{
-     border-radius: 10px;
+*{
+     box-sizing: border-box;
+}
+body{
+     height: 100dvh;
+     width: 100vw;
+     position: relative;
+     overflow: hidden;
 }
 
-.box:nth-child(odd){
-     background-color: #032050;
+nav{
+     scrollbar-width: none;
 }
-.box:nth-child(odd){
-     background-color: #032050;
+
+.hide-navbar{
+     transform: translateX(-100%);
+     transition: transform 0.3s ease-in-out;
+}
+
+.show-navbar{
+     transform: translateX(0);
+     transition: transform 0.3s ease-in-out;
 }
