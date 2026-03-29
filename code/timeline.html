@@ -160,9 +160,9 @@
           }
      });
 
-     tl.to("#first-box", {x: 350})
-       .to("#second-box", {x:350})
-       .to("#third-box", {x:350, opacity: 0.5})        // Override the opacity property.... 
+     tl.to("#first-box", {x: 290})
+       .to("#second-box", {x:290})
+       .to("#third-box", {x:290, opacity: 0.5})        // Override the opacity property.... 
        // 
        
        
@@ -200,10 +200,10 @@
           }
      });
 
-     tl2.to("#fourth-box", {x: 350})
-       .to("#fifth-box", {x:350}, "+=0.5")                  // Start 0.5 seconds after the previous animation finishes.
-       .to("#sixth-box", {x:350, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
-       .to("#seventh-box", {x:350, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
+     tl2.to("#fourth-box", {x: 290})
+       .to("#fifth-box", {x:290}, "+=0.5")                  // Start 0.5 seconds after the previous animation finishes.
+       .to("#sixth-box", {x:290, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
+       .to("#seventh-box", {x:290, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
 
 
 
@@ -240,9 +240,9 @@
           }
      });
 
-     tl3.to("#eight-box", {x: 350})
-       .to("#ninth-box", {x:350})                  // Start after the previous animation finishes.
-       .to("#tenth-box", {x:350, opacity: 0.5}, "0")    // Starts at the same time as the first animation, regardless of when the previous animation finishes.
+     tl3.to("#eight-box", {x: 290})
+       .to("#ninth-box", {x:290})                  // Start after the previous animation finishes.
+       .to("#tenth-box", {x:290, opacity: 0.5}, "0")    // Starts at the same time as the first animation, regardless of when the previous animation finishes.
        
 
 
@@ -279,12 +279,12 @@
           }
      });
 
-     tl4.to("#eleventh-box", {x: 350})
+     tl4.to("#eleventh-box", {x: 290})
         .add("myLabelForAnimation")
-        .to("#twelfth-box", {x:350})                  // Start after the previous animation finishes.
-        .to("#thirteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation-=0.5") 
-        .to("#fourteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation+=0.5")    
-        .to("#fifteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation-=0.8")    
+        .to("#twelfth-box", {x:290})                  // Start after the previous animation finishes.
+        .to("#thirteenth-box", {x:290, opacity: 0.5}, "myLabelForAnimation-=0.5") 
+        .to("#fourteenth-box", {x:290, opacity: 0.5}, "myLabelForAnimation+=0.5")    
+        .to("#fifteenth-box", {x:290, opacity: 0.5}, "myLabelForAnimation-=0.8")    
 
 
 </script>
