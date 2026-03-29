@@ -17,3 +17,10 @@ body{
      transform: translateX(0);
      transition: transform 0.3s ease-in-out;
 }
+
+
+.center{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+}

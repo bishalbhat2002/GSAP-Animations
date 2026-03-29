@@ -7,12 +7,12 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,7 +21,7 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
@@ -35,23 +35,394 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Timeline</h1>
+     <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-auto">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-0">Timeline Animation</h1>
+
+          <!-- Default timeline Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-10 center bg-red-200 rounded-sm" id="first-box">1</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="second-box">2</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="third-box">3</div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    <div class="flex justify-center gap-2 my-2">
+                         <button id="pause-timeline-btn" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Pause Timeline</button>
+                         <button id="play-timeline-btn" class="bg-zinc-800 text-white/80 px-2 py-1 rounded hidden">Play Timeline</button>
+                         <button id="restart-timeline-btn" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Restart Timeline</button>
+                    </div>
+                    Default Timeline Animation ---
+                    This animation demonstrates the use of GSAP timelines to create a sequence of animations. The next animations starts only when the previous finishes..... 
+               </div>
+          </div>
+
+           <!-- Delay after & before previous Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-10 center bg-red-200 rounded-sm" id="fourth-box">4</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="fifth-box">5</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="sixth-box">6</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="seventh-box">7</div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    <div class="flex justify-center gap-2 my-2">
+                         <button id="pause-timeline-btn-2nd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Pause Timeline</button>
+                         <button id="play-timeline-btn-2nd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded hidden">Play Timeline</button>
+                         <button id="restart-timeline-btn-2nd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Restart Timeline</button>
+                    </div>
+                    Delay Timeline Animation ---
+                    This animation demonstrates the use of delays to create a sequence of animations with timing gaps. Here, the second animation starts 0.5 seconds after the first animation finishes, and the third & fourth animations start 0.5 seconds before the second animation finishes, creating an overlapping effect. 
+               </div>
+          </div>
+          
+          
+          <!-- GSAP timeline to start at absolute timeAnimation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-10 center bg-red-200 rounded-sm" id="eight-box">8</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="ninth-box">9</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="tenth-box">10</div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    <div class="flex justify-center gap-2 my-2">
+                         <button id="pause-timeline-btn-3rd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Pause Timeline</button>
+                         <button id="play-timeline-btn-3rd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded hidden">Play Timeline</button>
+                         <button id="restart-timeline-btn-3rd" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Restart Timeline</button>
+                    </div>
+                    Absolute Timeline Animation ---
+                    This animation demonstrates the use of absolute timing to create a sequence of animations. Here, the second animation starts at 0.5 seconds after the first animation finishes, where as the first and third animations start at the same time, regardless of when the previous animation finishes. This allows us to create synchronized animations that start at specific points in the timeline.
+               </div>
+          </div>
+
+
+
+
+          <!-- GSAP timeline with label timeAnimation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="size-10 center bg-red-200 rounded-sm" id="eleventh-box">11</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="twelfth-box">12</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="thirteenth-box">13</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="fourteenth-box">14</div>
+               <div class="size-10 center bg-red-200 rounded-sm mt-1" id="fifteenth-box">15</div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    <div class="flex justify-center gap-2 my-2">
+                         <button id="pause-timeline-btn-4th" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Pause Timeline</button>
+                         <button id="play-timeline-btn-4th" class="bg-zinc-800 text-white/80 px-2 py-1 rounded hidden">Play Timeline</button>
+                         <button id="restart-timeline-btn-4th" class="bg-zinc-800 text-white/80 px-2 py-1 rounded">Restart Timeline</button>
+                    </div>
+                    Label-based Timeline Animation ---
+                    This animation demonstrates the use of label-based timing to create a sequence of animations. here, we add a label called "myLabelForAnimation" after the first animation. The second animation starts immediately after the first animation finishes, while the third, fourth and fifth animations are scheduled to start at specific times relative to the "myLabelForAnimation" label. This allows us to create complex animation sequences with precise control over the timing of each animation.
+               </div>
+          </div>
+          
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+     // Default Timeline Animation Code
+     const pauseBtn = document.getElementById("pause-timeline-btn");
+     const playBtn = document.getElementById("play-timeline-btn");
+     const restartBtn = document.getElementById("restart-timeline-btn");
+
+     pauseBtn.addEventListener("click", ()=>{
+          tl.pause()
+          playBtn.classList.remove("hidden");
+          pauseBtn.classList.add("hidden");
+     });                // This will pause the timeline
+     playBtn.addEventListener("click", ()=>{
+          tl.play()
+          playBtn.classList.add("hidden");
+          pauseBtn.classList.remove("hidden");
+     });                  // This will play the timeline
+     restartBtn.addEventListener("click", ()=>tl.restart());            // This will restart teh timeline
+     
+     // gsap.registerPlugin(ScrollTrigger);
+     const tl = gsap.timeline({
+          defaults: {
+               duration: 1,
+               ease: "power1.inOut"
+          },
+          onComplete:()=>{
+               pauseBtn.classList.add("hidden");
+          }, 
+          onStart:()=>{
+               pauseBtn.classList.remove("hidden");
+          }
+     });
+
+     tl.to("#first-box", {x: 350})
+       .to("#second-box", {x:350})
+       .to("#third-box", {x:350, opacity: 0.5})        // Override the opacity property.... 
+       // 
+       
+       
+       
+     // Delay after previous Animation Code
+     const pauseBtn2 = document.getElementById("pause-timeline-btn-2nd");
+     const playBtn2 = document.getElementById("play-timeline-btn-2nd");
+     const restartBtn2 = document.getElementById("restart-timeline-btn-2nd");
+
+     pauseBtn2.addEventListener("click", ()=>{
+          tl2.pause()
+          playBtn2.classList.remove("hidden");
+          pauseBtn2.classList.add("hidden");
+     });                // This will pause the timeline
+     playBtn2.addEventListener("click", ()=>{
+          tl2.play()
+          playBtn2.classList.add("hidden");
+          pauseBtn2.classList.remove("hidden");
+     
+     });                  // This will play the timeline
+     restartBtn2.addEventListener("click", ()=>tl2.restart());            // This will restart teh timeline
+     
+     
+     const tl2 = gsap.timeline({
+          defaults: {
+               duration: 1,
+               ease: "power1.inOut",
+               rotate:-10
+          },
+          onComplete:()=>{
+               pauseBtn2.classList.add("hidden");
+          }, 
+          onStart:()=>{
+               pauseBtn2.classList.remove("hidden");
+          }
+     });
+
+     tl2.to("#fourth-box", {x: 350})
+       .to("#fifth-box", {x:350}, "+=0.5")                  // Start 0.5 seconds after the previous animation finishes.
+       .to("#sixth-box", {x:350, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
+       .to("#seventh-box", {x:350, opacity: 0.5}, "-=0.5")    // Start 0.5 seconds before the previous animation finishes.
+
+
+
+     // GSAP timline with absolute Animation Code
+     const pauseBtn3 = document.getElementById("pause-timeline-btn-3rd");
+     const playBtn3 = document.getElementById("play-timeline-btn-3rd");
+     const restartBtn3 = document.getElementById("restart-timeline-btn-3rd");
+
+     pauseBtn3.addEventListener("click", ()=>{
+          tl3.pause()
+          playBtn3.classList.remove("hidden");
+          pauseBtn3.classList.add("hidden");
+     });                // This will pause the timeline
+     playBtn3.addEventListener("click", ()=>{
+          tl3.play()
+          playBtn3.classList.add("hidden");
+          pauseBtn3.classList.remove("hidden");
+     
+     });                  // This will play the timeline
+     restartBtn3.addEventListener("click", ()=>tl3.restart());            // This will restart teh timeline
+     
+     
+     const tl3 = gsap.timeline({
+          defaults: {
+               duration: 1,
+               ease: "power1.inOut",
+               rotate:-10
+          },
+          onComplete:()=>{
+               pauseBtn3.classList.add("hidden");
+          }, 
+          onStart:()=>{
+               pauseBtn3.classList.remove("hidden");
+          }
+     });
+
+     tl3.to("#eight-box", {x: 350})
+       .to("#ninth-box", {x:350})                  // Start after the previous animation finishes.
+       .to("#tenth-box", {x:350, opacity: 0.5}, "0")    // Starts at the same time as the first animation, regardless of when the previous animation finishes.
+       
+
+
+     // GSAP timline with label Animation Code
+     const pauseBtn4 = document.getElementById("pause-timeline-btn-4th");
+     const playBtn4 = document.getElementById("play-timeline-btn-4th");
+     const restartBtn4 = document.getElementById("restart-timeline-btn-4th");
+
+     pauseBtn4.addEventListener("click", ()=>{
+          tl4.pause()
+          playBtn4.classList.remove("hidden");
+          pauseBtn4.classList.add("hidden");
+     });                // This will pause the timeline
+     playBtn4.addEventListener("click", ()=>{
+          tl4.play()
+          playBtn4.classList.add("hidden");
+          pauseBtn4.classList.remove("hidden");
+     
+     });                  // This will play the timeline
+     restartBtn4.addEventListener("click", ()=>tl4.restart());            // This will restart teh timeline
+     
+     
+     const tl4 = gsap.timeline({
+          defaults: {
+               duration: 1,
+               ease: "power1.inOut",
+               rotate:-10
+          },
+          onComplete:()=>{
+               pauseBtn4.classList.add("hidden");
+          }, 
+          onStart:()=>{
+               pauseBtn4.classList.remove("hidden");
+          }
+     });
+
+     tl4.to("#eleventh-box", {x: 350})
+        .add("myLabelForAnimation")
+        .to("#twelfth-box", {x:350})                  // Start after the previous animation finishes.
+        .to("#thirteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation-=0.5") 
+        .to("#fourteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation+=0.5")    
+        .to("#fifteenth-box", {x:350, opacity: 0.5}, "myLabelForAnimation-=0.8")    
+
+
+</script>
 </html>
+
+
+
+
+<!-- Timeline Explanation -->
+
+
+
+<!-- 
+
+     Q. What is timeline in GSAP?
+     A timeline is like a playlist of animations. Instead of writing separate animations:
+        gsap.to(".box1", { 
+          x: 100, 
+          duration: 1 
+        });
+        gsap.to(".box2", { 
+          y: 100, 
+          duration: 1, 
+          delay: 1            -- Mannual delay for box2 to start after box1 
+     });       
+
+     We use timeline to sequence them without worrying about delays as:
+     const tl = gsap.timeline();
+     tl.to(".box1", { 
+          x: 100, 
+          duration: 1 
+     });
+     tl.to(".box2", { 
+          y: 100, 
+          duration: 1 
+     });       
+
+     Here, box2 will animate automatically after box1 finishes animating. 
+
+
+     Q. What is Chaining Animations in GSAP?
+     The timeline methods return the timeline itself. So, we can chain multiple animations together. 
+     For example:
+          tl.to(".box1", { x: 100 })
+            .to(".box2", { y: 100 })
+            .to(".box3", { scale: 2 });
+
+     This creates a animation sequence (one box after another).
+
+     Without timeline, we need mannual delays to achieve the same effect, which can be error-prone and hard to manage. But with timeline, GSAP handles the timing for us, making it easier to create complex animation sequences.
+
+
+     Q. Explain the Position Parameter in GSAP Timeline.
+     The position parameter in GSAP timeline allows you to control the timing of when an animation starts relative to the previous animation. It can be a string, a number, or a label.
+     There are different types of position parameters: They are:
+
+     1. Default (no position parameter): 
+     If you don't specify a position parameter, the animation will start immediately after the previous animation finishes. It is the default behavior of the timelines.
+     Example:
+          tl.to(".box1", { x: 100, duration: 1 })
+            .to(".box2", { x: 100, duration: 1 });     
+
+     2. Delay after previous animation ("+=1"):
+     You can specify a delay after the previous animation using a string with a plus sign. For example, "+=1" means the animation will start 1 second after the previous animation finishes.
+     Example:
+          tl.to(".box1", { x: 100, duration: 1 })
+            .to(".box2", { x: 100, duration: 1 }, "+=1");        -- Box2 start animating 1 second after box1 finishes animating.
+
+     3. Start at absolute time ("0"):
+     You can specify an absolute time for the animation to start. For example, "0" means the animation will start at the beginning of the timeline, regardless of when the previous animation finishes.
+     Example:
+          tl.to(".box1", { x: 100, duration: 1 })
+            .to(".box2", { x: 100, duration: 1 }, "0");        -- Box2 start animating at the same time as box1.
+
+     4. Start before previous animation ends ("-=0.5"):
+     You can specify a negative delay to start the animation before the previous animation ends. For example, "-=0.5" means the animation will start 0.5 seconds before the previous animation finishes. This creates an overlapping animation effect.
+     Example:
+          tl.to(".box1", { x: 100, duration: 1 })
+            .to(".box2", { x: 100, duration: 1 }, "-=0.5");        -- Box2 start animating 0.5 seconds before box1 finishes animating.
+
+     5. Label:
+     We can also use labels to control the timing of animations. A label is a named point in the timeline that we can reference when adding animations. We can create (.add("labelName")) and then use that label as a position parameter to start an animation at that point in the timeline.
+     Example:
+          tl.to(".box1", { x: 100 })
+            .add("myPoint")                  -- label is added here
+            .to(".box2", { y: 100 });
+            .to(".box3", { scale: 2 }, "myPoint");        
+          
+          --.box2 start animating exactly at "myPoint" in the timeline, which is right after box1 finishes animating.
+
+     6. Using Labels with Offsets:
+     We can use labels with offsets to start an animation at a specific time relative to a label. For example, "myPoint+=0.5" means the animation will start 0.5 seconds after the "myPoint" label.
+     Example:
+          tl.to(".box1", { x: 100 })
+            .add("myPoint")                  -- label is added here
+            .to(".box2", { y: 100 }, "myPoint+=0.5");        
+          
+            -- Box2 start animating 0.5 seconds after "myPoint" label, which is right after box1 finishes animating.
+            
+-->
+
+
+<!-- Default in Timeline -->
+
+<!-- 
+
+     We can set default values for all animations in a timeline using the defaults property. This allows us to avoid repeating the same properties for each animation and keeps our code cleaner.
+     Example:
+          const tl = gsap.timeline({
+                         defaults: {
+                              duration: 1,
+                              ease: "power2.out"
+                         }
+                    });
+
+          tl.to(".box1", { x: 100 })
+            .to(".box2", { y: 100 });
+
+            In this example, both animations will have a duration of 1 second and use the "power2.out" easing function by default. We only need to specify the properties that are different for each animations such as x and y. This makes our code more simpler and easier to understand.
+
+     We can override the default values for specific animations if needed. For example, if we want the second animation to have a different duration, we can specify it directly in the animation properties as:
+          
+          tl.to(".box1", { x: 100 })                        // duration = 1
+            .to(".box2", { y: 100, duration: 2 });          // override
+
+
+     Full Example:
+          const tl = gsap.timeline({
+                         defaults: { 
+                              duration: 1 
+                         }
+                    });
+
+          tl.to(".box1", { x: 100 })
+            .to(".box2", { y: 100 }, "-=0.5")               // overlap
+            .add("mid")
+            .to(".box3", { scale: 2 }, "mid")               // sync
+            .to(".box4", { opacity: 0 }, "mid+=0.5");       // delay from label
+
+
+-->
