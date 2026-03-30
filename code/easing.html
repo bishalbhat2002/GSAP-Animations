@@ -7,12 +7,12 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 absolute top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,7 +21,7 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
@@ -35,23 +35,264 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Easing</h1>
+     <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-auto">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-0 z-2">Easing Animation</h1>
+
+          <!-- ease:"none" Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "none" Animation ---
+                    This animation demonstrates the use of GSAP stagger to create a sequence of animations. The ease: "none" property is used to create a linear animation, where the animation moves at a constant speed from start to finish. In this example, the boxes will move up and down with a constant speed, without any acceleration or deceleration.
+               </div>
+          </div>
+
+
+            <!-- ease:"power2.in" Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-in-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "power2.in" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "power2.in" property to create a sequence of animations. The ease: "power2.in" property creates an animation that starts slow and then accelerates. In this example, the boxes will move up and down with a slow start and then speed up towards the end of the animation.
+               </div>
+          </div>
+
+
+          <!-- ease:"power2.out" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-out-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "power2.out" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "power2.out" property to create a sequence of animations. The ease: "power2.out" property creates an animation that starts fast and then decelerates. In this example, the boxes will move up and down with a fast start and then slow down towards the end of the animation. 
+               </div>
+          </div>
+
+
+          <!-- ease:"power2.inOut" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-power2-inout-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "power2.inOut" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "power2.inOut" property to create a sequence of animations. The ease: "power2.inOut" property creates an animation that starts slow, accelerates, and then decelerates. In this example, the boxes will move up and down with a slow start, fast middle, and slow end.  
+               </div>
+          </div>
+          
+          <!-- ease:"bounce" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-bounce-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "bounce" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "bounce" property to create a sequence of animations. The ease: "bounce" property creates an animation that bounces at the end of the timeline. In this example, the boxes will move up and down with a bouncing effect at the end.  
+               </div>
+          </div>
+
+
+          <!-- ease: "elastic" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-elastic-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "elastic" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "elastic" property to create a sequence of animations. The ease: "elastic" property creates an animation that has an elastic effect at the end of the timeline. In this example, the boxes will move up and down with an elastic effect at the end.  
+               </div>
+          </div>
+          
+          
+          <!-- ease: "back" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-back-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "back" Animation ---
+                    This animation demonstrates the use of GSAP stagger with the ease: "back" property to create a sequence of animations. The ease: "back" property creates an animation that has a back effect at the end of the timeline. In this example, the boxes will move up and down with a back effect at the end.  
+               </div>
+          </div>
+
+
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+     // ease: "none" -> linear Animation Code:
+     gsap.from(".box-for-ease-none-perperty", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"none",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })     
+     
+     // ease: "power2.in" -> linear Animation Code:
+     gsap.from(".box-for-ease-power2-in-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"power1.in",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+     
+     // ease: "power2.out" -> linear Animation Code:
+     gsap.from(".box-for-ease-power2-out-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"power2.out",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+     
+     // ease: "power2.inOut" -> linear Animation Code:
+     gsap.from(".box-for-ease-power2-inOut-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"power2.inOut",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+
+     
+     // ease: "bounce" -> linear Animation Code:
+     gsap.from(".box-for-ease-bounce-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"bounce",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+
+     
+     // ease: "elastic" -> linear Animation Code:
+     gsap.from(".box-for-ease-elastic-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"elastic",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+     
+     
+     // ease: "back" -> linear Animation Code:
+     gsap.from(".box-for-ease-back-property", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"back",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+
+
+
+
+</script>
 </html>
+
+
+
+
+<!-- Easing Explanation -->
+
+<!-- 
+
+     Q. What is easing in animation?
+     Easing controls the speef of animation over time. It allows you to create more natural and realistic animations by specifying how the animations should accelerate and decelerate. Easing functions can be used to create various effects, such as bouncing, elastic, and more. 
+
+     Instead of moving at constant speed, easing allows the animation to start slowly, speed up, and then slow down again, creating a more dynamic and visually appealing effect. 
+
+     Some common easing values include:
+     1. ease: "none"              -> No easing, the animation will move at a constant speed [ie. Linear animation]
+     2. ease: "power1.in"         -> Starts fast -> slows down at the end
+     3. ease: 'power1.out'        -> Starts slow -> speeds up at the end
+     4. ease: 'power1.inOut'      -> Starts slow -> speeds up in the middle -> slows down at the end
+     5. ease: 'bounce'            -> creates a bouncing effect at the end of the animation
+     6. ease: 'elastic'           -> creates a elastic effect at the end of the animation
+     7. ease: 'back'              -> creates a back effect at the end of the animation
+
+
+-->
