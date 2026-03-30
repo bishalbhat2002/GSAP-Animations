@@ -7,12 +7,12 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 absolute top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,7 +21,7 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
@@ -35,23 +35,318 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Stagger</h1>
+     <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-auto">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-0 z-2">Stagger Animation</h1>
+
+          <!-- Basic Stagger Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-basic-stagger">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Basic Stagger Animation ---
+                    This animation demonstrates the use of GSAP stagger to create a sequence of animations. The next animations starts only when the previous finishes..... 
+               </div>
+          </div>
+
+
+            <!-- Timeline Stagger Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-1">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-2">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-3">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-4">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-5">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm" id="box-for-timeline-stagger-6">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Timeline Stagger Animation ---
+                    This animation demonstrates the use of GSAP stagger with timelines to create a sequence of animations. The next animations starts only when the previous finishes..... 
+               </div>
+          </div>
+
+
+          <!-- Basic Stagger from:"end" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-end-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Basic Stagger From Property Animation ---
+                    This animation demonstrates the use of GSAP stagger with the from property to create a sequence of animations. From property allows us to specify the starting point of the animation. In this example, the animation starts from the end and then moves towards the start. 
+               </div>
+          </div>
+
+
+          <!-- Basic Stagger from:"start" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-start-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Basic Stagger From Property Animation ---
+                    This animation demonstrates the use of GSAP stagger with the from property to create a sequence of animations. From property allows us to specify the starting point of the animation. In this example, the animation starts from the start and then moves towards the end. 
+               </div>
+          </div>
+          
+          <!-- Basic Stagger from:"center" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-center-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Basic Stagger From Property Animation ---
+                    This animation demonstrates the use of GSAP stagger with the from property to create a sequence of animations. From property allows us to specify the starting point of the animation. In this example, the animation starts from the center and then moves towards the edges. 
+               </div>
+          </div>
+
+
+          <!-- Basic Stagger from:"edges" property Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-stagger-from-edges-property">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Basic Stagger From Property Animation ---
+                    This animation demonstrates the use of GSAP stagger with the from property to create a sequence of animations. From property allows us to specify the starting point of the animation. In this example, the animation starts from the edges and then moves towards the center. 
+               </div>
+          </div>
+
+
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+     // Basic Stagger Animation Code:
+     gsap.from(".box-for-basic-stagger", {
+          y:40,
+          duration:0.4,
+          opacity:0,
+          stagger:0.3,
+          ease:"power1.out",
+          repeat:-1,
+          repeatDelay:2,
+          yoyo:true
+     })
+
+     // Timeline Stagger Animation Code:
+     let tl = gsap.timeline({
+          defaults:{
+               duration:0.4,
+               opacity:0,
+               stagger:0.3,
+               ease:"power1.out",
+               repeat:-1,
+               repeatDelay:2,
+               yoyo:true
+          }
+     });
+     const boxTimeline1 = document.getElementById("box-for-timeline-stagger-1");
+     const boxTimeline2 = document.getElementById("box-for-timeline-stagger-2");
+     const boxTimeline3 = document.getElementById("box-for-timeline-stagger-3");
+     const boxTimeline4 = document.getElementById("box-for-timeline-stagger-4");
+     const boxTimeline5 = document.getElementById("box-for-timeline-stagger-5");
+     const boxTimeline6 = document.getElementById("box-for-timeline-stagger-6");
+
+     tl.from(boxTimeline1, {y:40})
+       .from(boxTimeline2, {x:20, stagger:0.5})
+       .from(boxTimeline3, {y:-40})
+       .from(boxTimeline4, {x:-40})
+       .from(boxTimeline5, {y:-40})
+       .from(boxTimeline6, {x:40})
+
+
+
+     // From:end Property with Stagger:
+     gsap.from(".box-for-stagger-from-end-property",{
+          y:40,
+          duration:0.4,
+          opacity:0,
+          ease:"power1.out",
+          repeat:-1,
+          repeatDelay:1,
+          yoyo:true,
+          stagger:{
+               each:0.3,            // There is a delay of 0.3 seconds between the start of each animation.
+               from:"center",
+               from:"edges",
+               from:"start",
+               from:"end",
+          }
+     })     
+     
+     // From:start Property with Stagger:
+     gsap.from(".box-for-stagger-from-start-property",{
+          y:40,
+          duration:0.4,
+          opacity:0,
+          ease:"power1.out",
+          repeat:-1,
+          repeatDelay:1,
+          yoyo:true,
+          stagger:{
+               each:0.3,           // There is a delay of 0.3 seconds between the start of each animation.
+               from:"start",
+          }
+     })
+
+     // From:center Property with Stagger:
+     gsap.from(".box-for-stagger-from-center-property",{
+          y:40,
+          duration:0.4,
+          opacity:0,
+          ease:"power1.out",
+          repeat:-1,
+          repeatDelay:1,
+          yoyo:true,
+          stagger:{
+               each:0.3,           // There is a delay of 0.3 seconds between the start of each animation.
+               from:"center",
+          }
+     })
+
+
+     // From:edges Property with Stagger:
+     gsap.from(".box-for-stagger-from-edges-property",{
+          y:40,
+          duration:0.4,
+          opacity:0,
+          ease:"power1.out",
+          repeat:-1,
+          repeatDelay:1,
+          yoyo:true,
+          stagger:{
+               each:0.3,           // There is a delay of 0.3 seconds between the start of each animation.
+               from:"edges",
+          }
+     })
+
+
+</script>
 </html>
+
+
+
+
+<!-- Stagger Explanation -->
+
+<!-- 
+     Q. What is Stagger in GSAP?
+     Stagger is a delay between multiple element animations one after another. 
+     Example:
+          gsap.to(".box", {
+               y: 100,
+               stagger: 0.2
+          });
+
+     Here, Box1 -> Box2 -> Box3 -> Box4 will ainimate one after another with a delay of 0.2 seconds between them. 
+
+     
+     1. Basic Stagger:
+     It is simple delay between the animations of multiple elements. We can directly specify the stagger value (delay value) in the animatino object as:
+          gsap.to(".box", {
+               y: 100,
+               stagger: 0.2
+          });
+     
+     2. Stagger with Timeline:
+     We can also use stagger with timeline to create a sequence of animations. In this case, the next animation starts only when the previous one finishes. 
+     Example:     
+          let tl = gsap.timeline();
+          tl.to(".box", {
+               y: 100,
+               stagger: 0.2
+          });
+     Here, the animation of Box1 will start first, and once it finishes, the animation of Box2 will start, and so on. The stagger: 0.2 will still apply, meaning there will be a 0.2 second delay between the start of each animation, but they will not overlap. Exach animation will wait for the previous one to complete before starting, creating a clear sequence of animations.
+
+     3. Stagger Grid:
+     We can also create a stagger grid animation where the elements animate in a grid pattern. This can be achieved by using the stagger property with a function that calculates the delay based on the index of the element and it position in the grid. 
+     Example:
+          gsap.to(".box", {
+               y: 100,
+               scale: 0,
+               stagger: {
+                    grid: [3, 3],            // 3 rows and 3 columns
+                    each: 0.2
+               }
+          });
+
+     3. From Property with Stagger:
+     We can also use the from property with stagger to create a stagger animation that starts from a specific state. 
+     Example:
+          gsap.from(".box", {
+               y: 100,
+               opacity: 0,
+               stagger: {
+                    each: 0.2,
+                    from: "center"          // Animation starts from the center element and then moves outward
+                    from: "start"          // Animation starts from the first element and then moves last element
+                    from: "end"          // Animation starts from the last element and then moves first element
+                    from: "edges"          // Animation starts from the last element and last elements  then moves towards the center element
+               }
+          });
+
+     4. each Vs amount in Stagger:
+     The each property in stagger specifies the delay between each animation, while the amount property specifies the total duration of the stagger animation. 
+     In simple words,
+          each: delay per item, or Gap between the start of each animation
+          amount: total duration of the stagger animation, Total spread of the stagger animation.
+
+     Example:
+          gsap.to(".box", {
+               y: 100,
+               stagger: {
+               grid: [2, 3],
+               from: "center",
+               amount: 1
+               }
+          });
+     
+
+-->
+

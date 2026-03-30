@@ -23,20 +23,20 @@
 
 ------------------------
 
-[ ] 3. Timeline (VERY IMPORTANT)
-    [ ] gsap.timeline()
-    [ ] chaining animations
-    [ ] position parameter ("+=1", "-=0.5")
-    [ ] labels
-    [ ] defaults in timeline
+[✅] 3. Timeline (VERY IMPORTANT)
+    [✅] gsap.timeline()
+    [✅] chaining animations
+    [✅] position parameter ("+=1", "-=0.5")
+    [✅] labels
+    [✅] defaults in timeline
 
 ------------------------
 
-[ ] 4. Stagger Animations
-    [ ] stagger basic
-    [ ] stagger grid
-    [ ] stagger from: "start", "center", "edges"
-    [ ] stagger each vs amount
+[✅] 4. Stagger Animations
+    [✅] stagger basic
+    [✅] stagger grid
+    [✅] stagger from: "start", "center", "edges"
+    [✅] stagger each vs amount
 
 ------------------------
 
