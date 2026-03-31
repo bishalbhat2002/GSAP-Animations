@@ -40,23 +40,23 @@
 
 ------------------------
 
-[ ] 5. Easing (Deep Understanding)
-    [ ] ease types (power, sine, expo, circ)
-    [ ] custom ease
-    [ ] difference between ease-in / ease-out
+[✅] 5. Easing (Deep Understanding)
+    [✅] ease types (power, sine, expo, circ)
+    [✅] custom ease
+    [✅] difference between ease-in / ease-out
 
 ------------------------
 
-[ ] 6. ScrollTrigger (CORE)
-    [ ] plugin setup & register
-    [ ] trigger
-    [ ] start & end
-    [ ] markers (debugging)
-    [ ] toggleActions
-    [ ] once
-    [ ] scrub
-    [ ] pin
-    [ ] pinSpacing
+[✅] 6. ScrollTrigger (CORE)
+    [✅] plugin setup & register
+    [✅] trigger
+    [✅] start & end
+    [✅] markers (debugging)
+    [✅] toggleActions
+    [✅] once
+    [✅] scrub
+    [✅] pin
+    [✅] pinSpacing
 
 ------------------------
 

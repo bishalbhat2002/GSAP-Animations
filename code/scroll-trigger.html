@@ -7,12 +7,13 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<!-- <body class="bg-green-100 h-screen overflow-hidden relative"> -->
+<body class="bg-green-100 relative">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 absolute top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,7 +22,7 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
@@ -35,23 +36,208 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Scroll Trigger</h1>
+
+     <!-- <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-y-auto"> -->
+     <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-y-auto">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-0 z-2">Scroll Trigger</h1>
+
+          <!-- ease:"none" Animation Code.. -->
+          <!-- <div class="bg-green-500 p-2 rounded-sm">
+               <div class="flex gap-2">
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">1</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">2</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">3</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">4</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">5</div>
+                    <div class="size-20 center bg-red-200 rounded-sm box-for-ease-none-perperty">6</div>
+               </div>
+
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Ease: "none" Animation ---
+                    This animation demonstrates the use of GSAP stagger to create a sequence of animations. The ease: "none" property is used to create a linear animation, where the animation moves at a constant speed from start to finish. In this example, the boxes will move up and down with a constant speed, without any acceleration or deceleration.
+               </div>
+          </div> -->
+
+
+           <!-- Container -->
+  <div class="container mx-auto px-4">
+
+    <!-- Section 1 -->
+    <div class="h-screen flex items-center justify-center">
+      <h1 class="text-4xl font-bold">Scroll Down 👇</h1>
+    </div>
+
+    <!-- Animated Section -->
+    <div class="h-screen flex items-center justify-start">
+      <div class="box w-32 h-32 bg-green-400 rounded-xl"></div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="h-screen flex items-center justify-center">
+      <h1 class="text-4xl font-bold">End Section</h1>
+    </div>
+
+  </div>
+
+
+
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".box", {
+      x: 200,
+      y: 100,
+      rotation: 360,
+     //  duration: 2,         
+     // When we use scrub, the duration property is ignored, because the animation duration is determined by the scroll distance and speed.
+      scrollTrigger: {
+        trigger: ".box",
+        scroller: "main",     // This specifies the container that will be scrolled. In this case, it's the main element. If we don't specify this, it will default to the window object.
+        start: "top 80%",
+        end: "top 30%",
+        markers: true,
+        scrub: true,
+     //    pin: true          // This will pin the trigger element in place while the scroll trigger is active. The element will remain fixed in its position until the end of the scroll trigger is reached.
+      }
+    });
+   
+
+</script>
 </html>
+
+
+
+
+<!-- Scroll Trigger Explanation -->
+
+<!-- 
+
+     1. Plugin Setup & Register
+     ScrollTrigger is a plugin of GSAP, so we must include and register it.
+          <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+          <script>
+               gsap.registerPlugin(ScrollTrigger);          // This registers the scroll trigger plugin with GSAP, without registering, Scroll Trigger won't work.
+          </script>
+
+     2. 'trigger' property in scrollTrigger:
+     It defines which element controls thee scroll animation. When the trigger element enters the viewport, the animation will start. We can also specify the trigger element's position in the viewport using the 'start' and 'end' property. For example, if we set 'start: "top center"', the animation will start when the top of the trigger element reaches the center of the viewport. If we set 'end: "bottom top"', the animation will end when the bottom of the trigger element reaches the top of the viewport.
+     Example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box"
+               }
+          });
+     
+     3. start & end property in scrollTrigger:
+     'start' controls when the animation starts and 'end' controls when the animation ends. 
+     Syntax:
+          start: "element-position viewport-position"
+          end: "element-position viewport-position"
+     
+          We can use the following keywords for element-position:
+               - top: the top of the trigger element
+               - center: the center of the trigger element
+               - bottom: the bottom of the trigger element
+               -also, percentage values can be used to specify the position of the trigger element, for example, "20%" would mean 20% down from the top of the trigger element.
+          
+     Example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box",
+                    start: "top 80%",             // animation starts when the top of the trigger element reaches the 80% of the viewport
+                    end: "bottom top"             // animation ends when the bottom of the trigger element reaches the top of the viewport
+               }
+          });
+
+     4. markers property in scrollTrigger:
+     Shows the visual guides on the screen to indicate the start and end points of the scroll trigger.
+     Example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box",
+                    start: "top 80%",
+                    end: "bottom top",
+                    markers: true            // Shows markers on the screen to indicate the start and end points of the scroll trigger
+               }
+          });
+
+     5. toggleActions property in scrollTrigger:
+     It controls what happens on scroll events. There are 4 events in order - onEnter, onLeave, onEnterBack, onLeaveBack. Each event can have one of the following actions:
+          - play: plays the animation
+          - pause: pauses the animation
+          - resume: resumes the animation from where it was paused
+          - reverse: reverses the animation
+          - restart: restarts the animation from the beginning
+          - reset: resets the animation to its initial state
+          - complete: completes the animation immediately
+          - none: does nothing
+     
+     Syntax:
+          toggleActions: "onEnter onLeave onEnterBack onLeaveBack"
+          toggleActions: "play none resume none"    
+     
+
+     6. once:
+     When this property is set to true, the animation will only play once. The animation will not repeat on scroll back after.
+     example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box",
+                    start: "top 80%",
+                    end: "bottom top",
+                    toggleActions: "play none none none",
+                    once: true            // The animation will only play once, it won't repeat on scroll back after.
+               }
+          });
+
+     7. scrub:
+     This property links the animation progress to the scrollbar position. When scrub is set to true, the animation will play in sync with the scrollbar movement. The animation will play forward when scrolling down and reverse when scrolling up. We can also specify a number value for scrub, which will create a delay between the scrollbar movement and the animation. 
+     For example, 
+     if we set scrub: 1, there will be a 1-second delay between the scrollbar movement and the animation.
+     
+     Example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box",
+                    start: "top 80%",
+                    end: "bottom top",
+                    scrub: true            // The animation will play in sync with the scrollbar movement.
+               }
+          });
+
+     8.pin:
+     This property fixes an element during the scroll. When pin is set to true, the trigger element will be pinned in place while the scroll trigger is active. The element will remain fixed in its position until the end of the scroll trigger is reached.
+     Example:
+          gsap.to(".box", {
+               x: 300,
+               scrollTrigger: {
+                    trigger: ".box",
+                    start: "top 80%",
+                    end: "bottom top",
+                    pin: true            // The trigger element will be pinned in place while the scroll trigger is active.
+               }
+          });
+-->
