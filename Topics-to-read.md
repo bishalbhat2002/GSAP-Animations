@@ -60,27 +60,27 @@
 
 ------------------------
 
-[ ] 7. ScrollTrigger Advanced
-    [ ] timeline + scrollTrigger
-    [ ] multiple triggers
-    [ ] animations per element
-    [ ] horizontal scroll
-    [ ] parallax effects
-    [ ] snapping
+[✅] 7. ScrollTrigger Advanced
+    [✅] timeline + scrollTrigger
+    [✅] multiple triggers
+    [✅] animations per element
+    [✅] horizontal scroll
+    [✅] parallax effects
+    [✅] snapping
 
 ------------------------
 
-[ ] 8. Responsive Animations
-    [ ] matchMedia()
-    [ ] different animations for mobile/desktop
+[✅] 8. Responsive Animations
+    [✅] matchMedia()
+    [✅] different animations for mobile/desktop
 
 ------------------------
 
-[ ] 9. Callbacks & Control
-    [ ] onStart, onUpdate, onComplete
-    [ ] repeat, yoyo
-    [ ] repeatDelay
-    [ ] controlling animations (play, pause, reverse)
+[✅] 9. Callbacks & Control
+    [✅] onStart, onUpdate, onComplete
+    [✅] repeat, yoyo
+    [✅] repeatDelay
+    [✅] controlling animations (play, pause, reverse)
 
 ------------------------
 
@@ -108,20 +108,20 @@
 
 ------------------------
 
-[ ] 13. Utility Functions
-    [ ] gsap.utils.toArray()
-    [ ] random()
-    [ ] clamp()
-    [ ] wrap()
+[✅] 13. Utility Functions
+    [✅] gsap.utils.toArray()
+    [✅] random()
+    [✅] clamp()
+    [✅] wrap()
 
 ------------------------
 
-[ ] 14. Plugins (Pro Level)
-    [ ] ScrollTrigger (mastery)
-    [ ] Draggable
-    [ ] MotionPathPlugin
-    [ ] Flip Plugin
-    [ ] Observer
+[✅] 14. Plugins (Pro Level)
+    [✅] ScrollTrigger (mastery)
+    [✅] Draggable
+    [✅] MotionPathPlugin
+    [✅] Flip Plugin
+    [✅] Observer
 
 ------------------------
 

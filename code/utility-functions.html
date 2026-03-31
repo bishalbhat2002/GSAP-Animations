@@ -7,12 +7,13 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<!-- <body class="bg-green-100 h-screen overflow-hidden relative"> -->
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 fixed top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,12 +22,12 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
      <!-- Nav list -->
-     <ul class="mt-4 flex flex-col gap-2" id="navlinks">
+     <ul class="mt-4 flex flex-col gap-2 overflow-y-auto bg-pink-300" id="navlinks">
           <!-- <li class="p-2 hover:bg-gray-200 rounded"><a class="block" href="/">Home</a></li> -->
      </ul>
 
@@ -35,23 +36,72 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Utility Functions</h1>
+
+     <!-- <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-y-auto"> -->
+     <main class="bg-green-100 p-4 flex flex-col gap-5 min-h-screen" id="main">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-4 z-2">Utility Functions</h1>
+
+          <!-- Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Please look the commented code at the end of this file for the explanation of utility functions in GSAP.
+               </div>
+          </div>
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+</script>
 </html>
+
+
+
+
+<!-- Utility Functions Explanation -->
+
+<!-- 
+     1. GSAP Utility Functions:
+     GSAP provides several utility functions that can be used to perform common tasks related to animations. Some of the commonly used utility functions include:
+          - gsap.utils.toArray(): this function converts anything into a proper array.
+          Example:
+               let items = document.querySelectorAll(".box");         // This returns a NodeList, not an array.
+               items = gsap.utils.toArray(items);                     // Now it's a proper array.
+               now,
+               items.forEach(item => {
+                  gsap.to(item, { 
+                    x: 100, 
+                    duration: 1 
+                  });
+               });
+
+          - gsap.utils.random(x, y): This function generates a random number between a specified minimum (x) and maximum (y) value. It can be used to create random animations or to add variability to your animations.
+         Example:
+               gsap.to(".box", {
+                    x: gsap.utils.random(100, 500)
+               });
+          
+          - gsap.utils.wrap(): This function wraps a value within a specified range. It is often used to create looping animations or to ensure that values stay within certain limits.
+
+          - gsap.utils.interpolate(): This function interpolates between two values based on a given progress value (between 0 and 1). It is useful for creating smooth transitions between different states.
+          
+          - gsap.utils.snap(): This function snaps a value to the nearest increment based on a specified grid size. It can be used to create animations that align with a grid or to ensure that values snap to specific points.      
+   
+-->

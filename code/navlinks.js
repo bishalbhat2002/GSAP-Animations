@@ -5,15 +5,15 @@ const navlinks = [
      { name: "Stagger Animations", href: "/code/stagger.html"},
      { name: "Easing", href: "/code/easing.html"},
      { name: "Scroll Trigger", href: "/code/scroll-trigger.html"},
-     { name: "Scroll Trigger Advanced", href: "/code/scroll-trigger-advanced.html"},
+     // { name: "Scroll Trigger Advanced", href: "/code/scroll-trigger-advanced.html"},
      { name: "Responsive Animations", href: "/code/responsive-animations.html"},
      { name: "Callbacks & controls", href: "/code/callbacks-controls.html"},
      { name: "Text & SVG Animations", href: "/code/text-svg.html"},
-     { name: "Advanced Effects", href: "/code/advanced-effects.html"},
-     { name: "Performance Optimization", href: "/code/performance-optimization.html"},
+     // { name: "Advanced Effects", href: "/code/advanced-effects.html"},
+     // { name: "Performance Optimization", href: "/code/performance-optimization.html"},
      { name: "Utility Functions", href: "/code/utility-functions.html"},
      { name: "Plugins", href: "/code/plugins.html"},
-     { name: "About topics", href: "/about-topics.html"},
+     { name: "About topics", href: "/topics-to-read.md"},
 ]
 
 const navbar = document.getElementById("navbar");

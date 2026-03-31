@@ -7,12 +7,13 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<!-- <body class="bg-green-100 h-screen overflow-hidden relative"> -->
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 fixed top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,12 +22,12 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
      <!-- Nav list -->
-     <ul class="mt-4 flex flex-col gap-2" id="navlinks">
+     <ul class="mt-4 flex flex-col gap-2 overflow-y-auto bg-pink-300" id="navlinks">
           <!-- <li class="p-2 hover:bg-gray-200 rounded"><a class="block" href="/">Home</a></li> -->
      </ul>
 
@@ -35,23 +36,105 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Callbacks and Controls</h1>
+
+     <!-- <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-y-auto"> -->
+     <main class="bg-green-100 p-4 flex flex-col gap-5 min-h-screen" id="main">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-4 z-2">Callbacks and Controls</h1>
+
+          <!-- Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Please look the commented code at the end of this file for the explanation of callbacks and controls in GSAP.
+               </div>
+          </div>
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+</script>
 </html>
+
+
+
+
+<!-- Callbacks and Controls Explanation -->
+
+<!-- 
+     1. Callbacks in GSAP:
+     Callbacks are the functions that run automatically at different times of an animation. They allow you to execute code at specific points during the animation lifecycle. The common callbacks in GSAP include:
+          - onStart: This callback is triggered when the animation starts.
+          - onUpdate: This callback is triggered every time the animation updates (e.g., on each frame).
+          - onComplete: This callback is triggered when the animation completes.
+          - onRepeat: This callback is triggered each time the animation repeats (if it has a repeat property).
+          - onReverseComplete: This callback is triggered when a reversed animation completes.
+          - onInterrupt: This callback is triggered when an animation is interrupted (Ex: by another animation or user interaction).
+          - onKill: This callback is triggered when an animation is killed (stopped and removed from the timeline).
+          - onPause: This callback is triggered when an animation is paused.
+          - onResume: This callback is triggered when a paused animation is resumed.
+          - onReverse: This callback is triggered when an animation is reversed.
+          - onStartParams, onUpdateParams, onCompleteParams, etc.: These allow you to pass parameters to the respective callbacks.
+     Example usage:
+
+          gsap.to(".box", {
+               x: 100,
+               duration: 2,
+               onStart: () => console.log("Animation started!"),
+               onUpdate: () => console.log("Animation updated!"),
+               onComplete: () => console.log("Animation completed!"),
+          });
+
+     2. Controls in GSAP:
+     Controls refer to the methods and properties that allow us to manipulate and control the animation after it has been created. Some of the common controls include:
+          - play(): Starts or resumes the animation.
+          - pause(): Pauses the animation.
+          - resume(): Resumes a paused animation.
+          - reverse(): Reverses the direction of the animation.
+          - restart(): Restarts the animation from the beginning.
+          - kill(): Stops the animation and removes it from the timeline.
+          - timeScale(value): Changes the speed of the animation (e.g., timeScale(2) will make it run twice as fast).
+          - progress(value): Sets or gets the progress of the animation (0 to 1).
+          - repeat(value): Sets the number of times the animation should repeat.
+          - repeatDelay(value): Sets the delay between repeats.
+          - yoyo(value): If true, the animation will reverse on every alternate repeat.
+     
+     Example usage:
+          first Save animation:
+               let anim = gsap.to(".box", {
+                    x: 300,
+                    duration: 2,
+                    paused: true        // Initially animation is in paused state
+               });
+
+          Then we can control it using the saved reference:
+               anim.play();          // Start the animation
+               anim.pause();         // Pause the animation
+               anim.resume();        // Resume the animation
+               anim.reverse();       // Reverse the animation
+               anim.restart();       // Restart the animation
+               anim.kill();          // Stop and remove the animation
+               anim.timeScale(2);    // Speed up the animation
+               anim.progress(0.5);   // Jump to the middle of the animation
+               anim.repeat(2);       // Repeat the animation twice
+               anim.yoyo(true);     // Enable yoyo effect for repeats
+
+
+
+-->

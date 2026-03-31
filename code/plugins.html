@@ -7,12 +7,13 @@
      <link rel="stylesheet" href="../style.css">
      <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<!-- <body class="bg-green-100 h-screen overflow-hidden relative"> -->
+<body class="bg-green-100">
 
      <!-- Navbar code -->
      <nav 
           id="navbar"
-          class="bg-orange-200 p-4 w-90 z-3 absolute top-0 left-0 right-0 h-screen overflow-y-auto hide-navbar"
+          class="bg-orange-200 p-4 w-90 z-4 fixed top-0 left-0 right-0 h-full overflow-y-auto hide-navbar"
      >
      <div 
      class="flex gap-2 justify-between items-center sticky top-0">
@@ -21,12 +22,12 @@
           </span>
           <button 
           id="hide-navbar-btn"
-          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200 md:hidden" 
+          class="bg-white text-xl inline-block h-10 w-10 rounded-full hover:bg-gray-200" 
           >❌</button>
      </div>
 
      <!-- Nav list -->
-     <ul class="mt-4 flex flex-col gap-2" id="navlinks">
+     <ul class="mt-4 flex flex-col gap-2 overflow-y-auto bg-pink-300" id="navlinks">
           <!-- <li class="p-2 hover:bg-gray-200 rounded"><a class="block" href="/">Home</a></li> -->
      </ul>
 
@@ -35,23 +36,73 @@
      <!-- Navbar show button -->
      <button 
           id="show-navbar-btn"
-          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 hover:text-white transition active:scale-99 absolute top-5 left-5" id="nav-open-btn"
+          class="bg-green-300 text-xl z-1 inline-block h-10 w-10 rounded-full hover:bg-green-700 hover:scale-102 z-3 hover:text-white transition active:scale-99 fixed top-5 left-5" id="nav-open-btn"
      >☰</button>
 
 
      <!-- Main section for code.... -->
-     <main class="bg-green-100 min-h-screen p-4">
-          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700">Plugins</h1>
+
+     <!-- <main class="bg-green-100 max-h-screen p-4 flex flex-col gap-5 overflow-y-auto"> -->
+     <main class="bg-green-100 p-4 flex flex-col gap-5 min-h-screen" id="main">
+          <h1 class="bg-green-300 text-center p-2 rounded text-2xl font-bold text-zinc-700 sticky top-4 z-2">Plugins</h1>
+
+          <!-- Animation Code.. -->
+          <div class="bg-green-500 p-2 rounded-sm">
+               <div class="bg-gray-300/80 rounded text-sm overflow-x-auto p-2 mt-2">
+                    Please look the commented code at the end of this file for the explanation of plugins in GSAP.
+               </div>
+          </div>
+
+
      </main>   
-
-     
-
-
-
 
 </body>
 <script src="navlinks.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js" integrity="sha512-NcZdtrT77bJr4STcmsGAESr06BYGE8woZdSdEgqnpyqac7sugNO+Tr4bGwGF3MsnEkGKhU2KL2xh6Ec+BqsaHA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js" integrity="sha512-P2IDYZfqSwjcSjX0BKeNhwRUH8zRPGlgcWl5n6gBLzdi4Y5/0O4zaXrtO4K9TZK6Hn1BenYpKowuCavNandERg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="../script.js"></script>
+
+<!-- GSAP Animation Code -->
+<script>
+
+gsap.registerPlugin(ScrollTrigger);
+
+
+
+
+</script>
 </html>
+
+
+
+
+<!-- Plugins Explanation -->
+
+<!-- 
+     GSAP Plugins:
+     They give extra powers to GSAP, allowing you to create more complex and powerful animations. Some popular plugins include:
+     
+     1. ScrollTrigger: 
+     This plugin allows you to create scroll-based animations. You can trigger animations when an element enters the viewport, or based on the scroll position.
+
+     2. Draggable:
+     This plugin allows you to make any element draggable. You can also create throw animations, where the element continues to move after being released, based on the velocity of the drag.
+
+     3. MotionPathPlugin:
+     This plugin allows you to animate an element along a custom path defined by an SVG or a set of coordinates.
+
+     4. Observer:
+     This plugin allows you to observe various user interactions, such as mouse movements, touch events, and scroll events, and trigger animations based on those interactions.
+
+     5. SplitText:
+     This plugin allows you to split text into individual characters, words, or lines, and animate them separately for more dynamic text animations.
+
+     6. CustomEase:
+     This plugin allows you to create custom easing functions for your animations, giving you more control over the timing and feel of your animations.
+
+     7. Flip:
+     This plugin allows you to create complex layout transitions by animating the changes in position, size, and rotation of elements when they are added, removed, or rearranged in the DOM.
+
+     8. TextPlugin:
+     This plugin allows you to animate the text content of an element, including changing the text, animating the text color, and more.
+
+-->
